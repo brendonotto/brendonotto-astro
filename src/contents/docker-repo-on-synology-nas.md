@@ -3,7 +3,7 @@ title: Host Docker Registry on a Synology NAS
 author: Brendon Otto
 datetime: 2022-03-06T06:03:34Z
 slug: docker-repo-on-synology-nas
-featured: false
+featured: true
 draft: false
 tags:
   - Docker
