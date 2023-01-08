@@ -125,14 +125,7 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
 | `npm run astro --help` | Get help using the Astro CLI                       |
 
-## ✨ Feedback & Suggestions
-
-If you have any suggestions/feedback, you can contact me via [my email](mailto:contact@satnaing.dev). Alternatively, feel free to open an issue if you find bugs or want to request new features.
-
 ## 📜 License
 
 Licensed under the MIT License, Copyright © 2022
 
----
-
-Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻
