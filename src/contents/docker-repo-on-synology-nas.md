@@ -61,4 +61,4 @@ Once this is done use a tool like Portainer or open the settings for the Docker 
 
 ![Synology use local Docker Registry](/assets/images/use-local-docker-registry.jpg)
 
-Thanks for reading! ✌
+Thanks for reading!
