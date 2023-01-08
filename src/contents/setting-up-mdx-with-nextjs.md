@@ -1,27 +1,21 @@
 ---
-title: "Setting Up MDX with Next.js"
-date: "2021-09-11"
-author:
-  name: "Brendon Otto"
-  picture: "/assets/blog/authors/brendon.jpg"
+title: Setting Up MDX with Next.js
+datetime: 2021-09-11T09:03:04Z
+author: Brendon Otto
 slug: "setting-up-mdx-with-nextjs"
-coverImage:
-  path: "/assets/blog/setting-up-mdx-with-nextjs/mdx-logo.png"
-  height: "200"
-  width: "200"
-ogImage:
-  url: "/assets/blog/setting-up-mdx-with-nextjs/mdx-logo.png"
-imageAttribution: ""
-excerpt: "How I set up MDX for this blog"
+tags:
+  - Next.js
+  - MDX
+description: How I set up MDX for a version this blog
 ---
 
-import ExternalLink from '../components/external-link.tsx'
+UPDATE 2023-01-08: I've moved my site from Next.js to Astro, I'm leaving this post up as it may help others in the future.
 
-This blog was generated using Next.js <ExternalLink url={`https://github.com/vercel/next.js/tree/canary/examples/blog-starter-typescript`}>Typescript blog template</ExternalLink> which was fantastic to use to get everything up and running. I also wanted to be able to embed componets on top of writing posts. To do so I chose `mdx-enhanced` by Kent C. Dodds as it works as a compiler and a transpiler. It was also recommneded by Josh W. Comeau in <ExternalLink url={`https://www.joshwcomeau.com/blog/how-i-built-my-blog/`}>this post</ExternalLink> talking about how he set up his blog.
+This blog was generated using Next.js [Typescript blog template](https://github.com/vercel/next.js/tree/canary/examples/blog-starter-typescript) which was fantastic to use to get everything up and running. I also wanted to be able to embed componets on top of writing posts. To do so I chose `mdx-enhanced` by Kent C. Dodds as it works as a compiler and a transpiler. It was also recommneded by Josh W. Comeau in [this post](https://www.joshwcomeau.com/blog/how-i-built-my-blog/) talking about how he set up his blog.
 
 ### What is MDX?
 
-<ExternalLink url={`https://mdxjs.com/`}>MDX</ExternalLink> is an enhancement to Markdown that supports writing JSX in Markdown documents. For my purposes it means that I can write React components and render them in my blog! All the links on this page are using a component for just this purpose!
+[MDX](https://mdxjs.com/) is an enhancement to Markdown that supports writing JSX in Markdown documents. For my purposes it means that I can write React components and render them in my blog! All the links on this page are using a component for just this purpose!
 
 ### Changes in order to get it working
 
@@ -31,7 +25,7 @@ By default the blog starter template uses `grey-matter` which will be swapped ou
 npm install --save mdx-bundler esbuild
 ```
 
-`esbuild` is required per the docs on `mdx-bundlers` <ExternalLink url={`https://github.com/kentcdodds/mdx-bundler#installation`}>site</ExternalLink>
+`esbuild` is required per the docs on `mdx-bundlers` [site](https://github.com/kentcdodds/mdx-bundler#installation)
 
 Now that we have our dependencies set up, we need to switch from `remark` to `mdx-bundler`.
 
@@ -164,6 +158,6 @@ If you see any errors around `Unexpected token '<'` that most likely means that 
 
 ### Shout outs
 
-I leaned very heavily on a couple of posts in order to get this all set up. One from <ExternalLink url={`https://www.joshwcomeau.com/blog/how-i-built-my-blog/`}>Josh W. Comeau</ExternalLink> and the other from <ExternalLink url={`https://www.notjust.dev/blog/2021-06-21-how-i-built-the-new-notjustdev-platoform-using-nextjs`}>notJustDev</ExternalLink>. They helped immensily in deciding what technology to use and thank you to notjustDev for having their <ExternalLink url={`https://github.com/Savinvadim1312/notjustdev`}>site open source</ExternalLink> so I could review how it was implemented.
+I leaned very heavily on a couple of posts in order to get this all set up. One from [Josh W. Comeau](https://www.joshwcomeau.com/blog/how-i-built-my-blog/) and the other from [notJustDev](https://www.notjust.dev/blog/2021-06-21-how-i-built-the-new-notjustdev-platoform-using-nextjs). They helped immensily in deciding what technology to use and thank you to notjustDev for having their [site](https://github.com/Savinvadim1312/notjustdev) open source so I could review how it was implemented.
 
-✌
+✌🏻

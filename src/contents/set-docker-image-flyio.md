@@ -1,18 +1,15 @@
 ---
-title: "Set Docker Image to use on Fly"
-date: "2022-09-09"
-author:
-  name: "Brendon Otto"
-  picture: "/assets/blog/authors/brendon.jpg"
+title: Set Docker Image to use on Fly
+datetime: 2022-09-09T01:35:32Z
+author: Brendon Otto
+featured: false
+draft: false
+tags:
+  - Docker
+  - Fly
+  - Elixir
 slug: "set-docker-image-flyio"
-coverImage:
-  path: ""
-  height: ""
-  width: ""
-ogImage:
-  url: ""
-imageAttribution: ''
-excerpt: ""
+description: "Use a custom Docker image with Fly.io"
 ---
 
 I'm working on a new Phoenix application that I wanted to deploy to [Fly.io](https://fly.io/). I started with version 1.14 of Elixir which was released [a few days ago](https://elixir-lang.org/blog/2022/09/01/elixir-v1-14-0-released/) and when I went to deploy it Fly failed to deply because it couldn't find the correct Docker image:

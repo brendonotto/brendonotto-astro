@@ -16,11 +16,11 @@ This recently happened to me and I wanted to tell you about the Collector's Fall
 
 To give some background, I am someone who is an information hoarder. I collect ebooks, articles, videos, browser tabs like toilet paper
 before a pandemic (too soon?). This saving of resources and even categorizing them with tags or organizing into lists is a form of wasted energy.
-The material I've gathered for so long isn't actually making me smarter, it's a form of being in motion but not <ExternalLink url={`https://jamesclear.com/taking-action`}>taking action</ExternalLink>.
+The material I've gathered for so long isn't actually making me smarter, it's a form of being in motion but not [taking action](https://jamesclear.com/taking-action).
 If I were to use the material then I'd be in action, I'd be building software or making things in the garage or making videos or taking pictures. Instead
 I allow it to collect dust and continue to search for new information that I won't use to actually _do_ something with it.
 
-So when I was watching a <ExternalLink url={`https://youtu.be/ZksYoaDldOM`}>YouTube video by Shu Omi</ExternalLink> talking about this concept, it felt super uncomfortable because he was basically describing
+So when I was watching a [YouTube video by Shu Omi](https://youtu.be/ZksYoaDldOM) talking about this concept, it felt super uncomfortable because he was basically describing
 me and my pattern of behavior. He outlines my exact behavior of impulse buying books and courses (Udemy courses anyone?). I've completed a few courses and books but that
 number is very small compared to the rate that they are purchased. While examining this I also noticed that I have a tendency do this in other non-digital areas too. I buy all kinds
 of electronic components, tools and other equipment with grand plans to use them in the near future. Yet years have done by and I have yet to use them, some are still in their original package!
@@ -43,7 +43,7 @@ in place one can focus on producing better art but then also experiment with bre
 My last way to combat Collector's Fallacy is to teach what your investing your time in. Share articles that you like to Twitter, Discord or other areas. Write up responses to articles on a blog or start a discussion on a social platform. This will force you to assess ideas from
 other perspectives that you hadn't thought of and push your understanding deeper. By writing or sharing something you're forcing yourself to organize your thoughts and ideas enough to discuss or teach it to someone else. This process will expose areas you don't understand as well as
 you originally thought. If you have children, explain something you're working on at their level. This is a big challenge as you'll discover how much context one might need to have in order to understand. I do this with my kids when they ask what I'm working on during the workday. There's
-so much they aren't aware of and it forces me to explain my work in simple terms anyone can understand. Richard Feynman used this technique so often that it's now named <ExternalLink url={`https://fs.blog/2021/02/feynman-learning-technique/`}>after him</ExternalLink>.
+so much they aren't aware of and it forces me to explain my work in simple terms anyone can understand. Richard Feynman used this technique so often that it's now named [after him](https://fs.blog/2021/02/feynman-learning-technique/).
 
 To be clear, I am constantly struggling with this. I still go on article frenzies where I save everything to Instapaper and know that it's building up. I have put a stop to the impulse buying of Udemy courses for the most part. They have done an excellent job of getting me to purchase
 courses that are $9.99-$11.99 because it's so inexpensive but I haven't completed a new one in quite a while. I also have stopped purchasing technical books as most languages and frameworks are so well documented on their sites. Technical books now provide the value of walking through
