@@ -32,4 +32,5 @@ export default defineConfig({
       wrap: true,
     },
   },
+  scopedStyleStrategy: "where",
 });
