@@ -7,6 +7,7 @@ import getPageNumbers from "@utils/getPageNumbers";
 import type { MarkdownInstance } from "astro";
 import type { Frontmatter } from "src/types";
 import slugify from "@utils/slugify";
+import { getCollection } from "astro:content";
 
 export interface Props {
   post: MarkdownInstance<Frontmatter>;
@@ -28,34 +29,42 @@ type PagePaths = {
 }[];
 
 export async function getStaticPaths() {
-  const posts = await Astro.glob<Frontmatter>("../../contents/**/*.md");
+  const posts = (await getCollection("blog")).map(post => ({
+    frontmatter: post.data,
+    file: post.id,
+    url: post.slug,
+    Content: post.render,
+    rawContent: post.body,
+    compiledContent: post.body,
+    getHeadings: () => [],
+    default: post.render,
+  })) as unknown as MarkdownInstance<Frontmatter>[];
 
-  const filteredPosts = posts.filter(({ frontmatter }) => !frontmatter.draft);
-
-  let postResult: PostResult = filteredPosts.map(post => {
-    return {
-      params: {
-        slug: slugify(post.frontmatter),
-      },
-      props: {
-        post,
-      },
-    };
-  });
-
-  const pagePaths: PagePaths = getPageNumbers(filteredPosts.length).map(
-    pageNum => ({
-      params: { slug: String(pageNum) },
-    })
-  );
-
-  return [...postResult, ...pagePaths];
+  return posts.map(post => ({
+    params: { slug: slugify(post.frontmatter) },
+    props: { post },
+  }));
 }
 
 const { slug } = Astro.params;
 const { post } = Astro.props;
+const { Content } = post;
 
-const posts = await Astro.glob<Frontmatter>("../../contents/**/*.md");
+const posts = (await Promise.all(
+  (await getCollection("blog")).map(async post => {
+    const renderResult = await post.render();
+    return {
+      frontmatter: post.data,
+      file: post.id,
+      url: post.slug,
+      Content: renderResult.Content,
+      rawContent: post.body,
+      compiledContent: post.body,
+      getHeadings: () => [],
+      default: renderResult.Content,
+    };
+  })
+)) as unknown as MarkdownInstance<Frontmatter>[];
 
 const sortedPosts = getSortedPosts(posts);
 
@@ -73,7 +82,7 @@ const paginatedPosts = sortedPosts.slice(startPost, lastPost);
 
 {
   post ? (
-    <PostDetails post={post} />
+    <PostDetails post={{ ...post, Content }} />
   ) : (
     <Posts
       posts={paginatedPosts}
