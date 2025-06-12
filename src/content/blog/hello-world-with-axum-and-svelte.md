@@ -1,9 +1,6 @@
 ---
 title: Hello world with Axum and Svelte
-author: Brendon Otto
-datetime: 2023-08-21T10:18:34Z
-slug: hello-world-with-axum-and-svelte
-featured: true
+pubDate: 2023-08-21T10:18:34Z
 draft: false
 tags:
   - Rust
@@ -30,7 +27,7 @@ cargo add tokio -F full
 cargo add axum
 ```
 
-Replace what's in `main.rs` with: 
+Replace what's in `main.rs` with:
 
 ```rust
 use std::net::SocketAddr;
@@ -70,22 +67,22 @@ First we need to ask SvelteKit to generate a static build for us. In order to do
 npm i -D @sveltejs/adapter-static
 ```
 
-Once added, we'll need to update `svelte.config.js` and remove `adapter-auto` in favor of `adapter-static`: 
+Once added, we'll need to update `svelte.config.js` and remove `adapter-auto` in favor of `adapter-static`:
 
 ```js
-import adapter from '@sveltejs/adapter-static';
+import adapter from "@sveltejs/adapter-static";
 ```
 
 Then add this config object to the adapter init call:
 
 ```js
 adapter: adapter({
-	pages: 'build',
-	assets: 'build',
-	fallback: undefined,
-	precompress: false,
-	strict: true
-})
+  pages: "build",
+  assets: "build",
+  fallback: undefined,
+  precompress: false,
+  strict: true,
+});
 ```
 
 With the adapter defined we'll now need the route to generate statically. Add a `+layout.js` file to the root of `src/routes` with the contents of `export const prerender = true;` to tell SvelteKit/Vite that this should render every page in this route statically.
@@ -116,6 +113,7 @@ fn static_frontend() -> Router {
 	Router::new().nest_service("/", static_frontend_dir)
 }
 ```
+
 Full `main.rs` file up to this point:
 
 ```rust
@@ -126,10 +124,10 @@ use tower_http::services::ServeDir;
 #[tokio::main]
 async fn main() {
 	let app = static_frontend();
-	
+
 	let addr = SocketAddr::from(([127, 0, 0, 1], 8080));
 	println!("--> Listening on {addr}");
-	
+
 	axum::Server::bind(&addr)
 	.serve(app.into_make_service())
 	.await
@@ -146,4 +144,4 @@ That cleans up the `main.r` file and now when running `cargo run` you should see
 
 ![](/assets/images/hello-svelte-from-axum.png)
 
-BUT, we lost our nice developer experience in our front end. When you run `npm run dev` and make a change, nothing happens to the markup that Axum serves because it's only coming from the `build` directory. That's a bummer! We'll see what we can do about that in the next post. 
+BUT, we lost our nice developer experience in our front end. When you run `npm run dev` and make a change, nothing happens to the markup that Axum serves because it's only coming from the `build` directory. That's a bummer! We'll see what we can do about that in the next post.

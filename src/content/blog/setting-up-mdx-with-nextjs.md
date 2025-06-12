@@ -1,8 +1,6 @@
 ---
 title: Setting Up MDX with Next.js
-datetime: 2021-09-11T09:03:04Z
-author: Brendon Otto
-slug: "setting-up-mdx-with-nextjs"
+pubDate: 2021-09-11T09:03:04Z
 tags:
   - Next.js
   - MDX
@@ -116,7 +114,7 @@ Now that's set up we need to change any locations that call this function to `aw
 ```typescript
 export function getAllPosts(fields: string[] = []) {
   const slugs = getPostSlugs();
-  const posts = slugs.map((slug) => getPostBySlug(slug, fields));
+  const posts = slugs.map(slug => getPostBySlug(slug, fields));
   posts
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
@@ -131,8 +129,8 @@ after:
 export async function getAllPosts(fields: string[] = []) {
   const slugs = getPostSlugs();
   let posts = (
-    await Promise.all(slugs.map((slug) => getPostBySlug(slug, fields)))
-  ).filter((p) => p);
+    await Promise.all(slugs.map(slug => getPostBySlug(slug, fields)))
+  ).filter(p => p);
 
   posts
     // sort posts by date in descending order
