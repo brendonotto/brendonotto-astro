@@ -8,6 +8,7 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://brendonotto.com/",
+  output: "static",
   integrations: [
     tailwind({
       config: {
@@ -15,7 +16,11 @@ export default defineConfig({
       },
     }),
     react(),
-    sitemap(),
+    sitemap({
+      i18n: {
+        defaultLocale: "en",
+      },
+    }),
   ],
   markdown: {
     remarkPlugins: [
@@ -32,5 +37,10 @@ export default defineConfig({
       wrap: true,
     },
     extendDefaultPlugins: true,
+  },
+  vite: {
+    optimizeDeps: {
+      exclude: ["@astrojs/markdown-remark"],
+    },
   },
 });
