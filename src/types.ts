@@ -4,6 +4,7 @@ export type BlogEntry = CollectionEntry<"blog">;
 
 export interface Frontmatter {
   title: string;
+  author?: string;
   description: string;
   pubDate: Date;
   updatedDate?: Date;
@@ -11,6 +12,7 @@ export interface Frontmatter {
   category?: string;
   tags?: string[];
   draft?: boolean;
+  slug?: string;
 }
 
 export type SocialObjects = {

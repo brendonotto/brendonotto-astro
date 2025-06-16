@@ -1,6 +1,7 @@
 ---
 title: Setting Up MDX with Next.js
 pubDate: 2021-09-11T09:03:04Z
+draft: false
 tags:
   - Next.js
   - MDX
