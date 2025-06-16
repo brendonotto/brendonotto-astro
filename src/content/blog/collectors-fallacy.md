@@ -1,13 +1,10 @@
 ---
 title: Collector's Fallacy
-author: Brendon Otto  
-datetime: 2021-07-11T02:05:51Z
-featured: false
+pubDate: 2021-07-11T02:05:51Z
 draft: false
 tags:
   - PKM
   - Learning
-slug: "collectors-fallacy"
 description: "Have you ever heard of a new concept and it described you or your behavior so well that it stopped you in your tracks?"
 ---
 

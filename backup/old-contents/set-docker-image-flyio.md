@@ -15,7 +15,7 @@ description: "Use a custom Docker image with Fly.io"
 I'm working on a new Phoenix application that I wanted to deploy to [Fly.io](https://fly.io/). I started with version 1.14 of Elixir which was released [a few days ago](https://elixir-lang.org/blog/2022/09/01/elixir-v1-14-0-released/) and when I went to deploy it Fly failed to deply because it couldn't find the correct Docker image:
 
 ```bash
-Error failed to fetch an image or build from source: error building: failed to solve with frontend dockerfile.v0: 
+Error failed to fetch an image or build from source: error building: failed to solve with frontend dockerfile.v0:
 failed to create LLB definition: docker.io/hexpm/elixir:1.14.0-erlang-25.0.4-debian-bullseye-20210902-slim: not found
 ```
 
@@ -26,4 +26,4 @@ I thought it was strange that it's trying to find an image with a date in the na
   image = "hexpm/elixir:1.14.0-erlang-25.0.4-debian-bullseye-20220801-slim"
 ```
 
-This will go get the appropriate image for my use case but any image on Docker hub can be specified here. 
+This will go get the appropriate image for my use case but any image on Docker hub can be specified here.

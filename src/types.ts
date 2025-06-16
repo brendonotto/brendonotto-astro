@@ -1,13 +1,18 @@
+import type { CollectionEntry } from "astro:content";
+
+export type BlogEntry = CollectionEntry<"blog">;
+
 export interface Frontmatter {
   title: string;
-  ogImage?: string;
+  author?: string;
   description: string;
-  author: string;
-  datetime: string;
-  slug: string;
-  featured: boolean;
-  draft: boolean;
-  tags: string[];
+  pubDate: Date;
+  updatedDate?: Date;
+  heroImage?: string;
+  category?: string;
+  tags?: string[];
+  draft?: boolean;
+  slug?: string;
 }
 
 export type SocialObjects = {
